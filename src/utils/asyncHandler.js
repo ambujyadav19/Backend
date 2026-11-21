@@ -1,7 +1,7 @@
 //method 1
 
 const asyncHandler=(requestHandler)=>{
-   (req,res,next)=>{
+   return (req,res,next)=>{
     Promise.resolve(requestHandler(req,res,next)).
     catch((err)=>next(err))
    }
@@ -9,9 +9,9 @@ const asyncHandler=(requestHandler)=>{
 
 
 
-//Method 2
+// Method 2
 
-// export {asyncHandler}
+export {asyncHandler}
 
 // const asyncHandler=(fn) => async (req,res,next) => {
 //     try {
